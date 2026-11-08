@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng nhập — Expense Manager</title>
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+<body>
+<main class="auth-page">
+    <div class="card">
+        <h1>Đăng nhập</h1>
+        <p class="subtitle">Quản lý chi tiêu cá nhân của bạn</p>
+
+        <div id="login-alert" class="alert" role="alert"></div>
+
+        <form id="login-form" novalidate>
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="username">
+            </div>
+            <div class="field">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" name="password" required minlength="8" maxlength="72"
+                       autocomplete="current-password">
+            </div>
+            <button type="submit" class="btn">Đăng nhập</button>
+        </form>
+
+        <p class="card-footer">Chưa có tài khoản? <a href="/register.html">Đăng ký</a></p>
+    </div>
+</main>
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

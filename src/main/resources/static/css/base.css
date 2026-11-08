@@ -1,0 +1,166 @@
+/* Shared base styles for Expense Manager static pages. */
+
+:root {
+    --color-bg: #f4f5f7;
+    --color-surface: #ffffff;
+    --color-border: #d9dce1;
+    --color-text: #1f2430;
+    --color-text-muted: #6b7280;
+    --color-primary: #2f6fed;
+    --color-primary-hover: #2558c4;
+    --color-danger: #d93025;
+    --color-danger-bg: #fdecea;
+    --color-success: #1e8e3e;
+    --color-success-bg: #e6f4ea;
+    --radius: 8px;
+    --spacing: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.auth-page {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing);
+}
+
+.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: calc(var(--spacing) * 2);
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.card h1 {
+    margin: 0 0 4px;
+    font-size: 22px;
+}
+
+.card .subtitle {
+    margin: 0 0 24px;
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.field input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 15px;
+    color: var(--color-text);
+    background: var(--color-surface);
+}
+
+.field input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(47, 111, 237, 0.15);
+}
+
+.field .field-error {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--color-danger);
+    display: none;
+}
+
+.field.has-error input {
+    border-color: var(--color-danger);
+}
+
+.field.has-error .field-error {
+    display: block;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 11px 16px;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--color-primary-hover);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.alert {
+    padding: 10px 12px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    margin-bottom: 16px;
+    display: none;
+}
+
+.alert.show {
+    display: block;
+}
+
+.alert-error {
+    background: var(--color-danger-bg);
+    color: var(--color-danger);
+}
+
+.alert-success {
+    background: var(--color-success-bg);
+    color: var(--color-success);
+}
+
+.card-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
