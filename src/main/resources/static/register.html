@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng ký — Expense Manager</title>
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+<body>
+<main class="auth-page">
+    <div class="card">
+        <h1 id="auth-title">Tạo tài khoản</h1>
+        <p class="subtitle" id="auth-subtitle">Bắt đầu quản lý chi tiêu của bạn</p>
+
+        <div id="register-alert" class="alert" role="alert"></div>
+
+        <form id="register-form" novalidate>
+            <div class="field" id="email-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="username">
+                <div class="field-error"></div>
+            </div>
+            <div class="field" id="password-field">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" name="password" required minlength="8" maxlength="72"
+                       autocomplete="new-password">
+                <div class="field-error"></div>
+            </div>
+            <button type="submit" class="btn">Đăng ký</button>
+        </form>
+
+        <form id="otp-form" style="display: none;" novalidate>
+            <p style="margin-bottom: 16px; font-size: 14px; color: var(--color-text-muted); text-align: center;">
+                Mã xác thực gồm 6 chữ số đã được gửi tới <strong id="otp-email-target" style="color: var(--color-text);"></strong>.
+            </p>
+            <div class="field" id="otp-field">
+                <label for="otp">Mã OTP (6 chữ số)</label>
+                <input type="text" id="otp" name="otp" required maxlength="6" pattern="\d{6}"
+                       placeholder="______" style="text-align: center; letter-spacing: 8px; font-size: 22px; font-weight: bold;">
+                <div class="field-error"></div>
+            </div>
+            <button type="submit" class="btn" style="margin-bottom: 12px;">Kích hoạt tài khoản</button>
+            <div style="text-align: center;">
+                <button type="button" id="resend-otp-btn" style="background: none; border: none; color: var(--color-primary); cursor: pointer; text-decoration: underline; font-size: 14px; padding: 0;">Gửi lại mã OTP</button>
+                <span id="countdown-timer" style="font-size: 13px; color: var(--color-text-muted); margin-left: 6px;"></span>
+            </div>
+        </form>
+
+        <p class="card-footer" id="card-footer">Đã có tài khoản? <a href="/login.html">Đăng nhập</a></p>
+    </div>
+</main>
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>
